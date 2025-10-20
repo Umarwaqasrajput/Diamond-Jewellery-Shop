@@ -1,39 +1,20 @@
+// ✅ File: src/app/shop/page.tsx
 "use client";
+import ProductList from "../../components/ProductList";
+import { motion } from "framer-motion";
 
-import Link from "next/link";
-
-export default function NotFound() {
+export default function ShopPage() {
   return (
-    <div
-      style={{
-        textAlign: "center",
-        padding: "100px 20px",
-        color: "white",
-        background: "linear-gradient(180deg, #000, #111)",
-        minHeight: "100vh",
-      }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="pt-10"
     >
-      <h1 style={{ fontSize: "3rem", marginBottom: "20px" }}>404 - Page Not Found</h1>
-      <p style={{ fontSize: "1.2rem", opacity: 0.8 }}>
-        The page you’re looking for doesn’t exist.
-      </p>
-      <Link href="/" style={{ textDecoration: "none" }}>
-        <button
-          style={{
-            marginTop: "30px",
-            background: "#40e0d0",
-            color: "#000",
-            padding: "12px 25px",
-            border: "none",
-            borderRadius: "8px",
-            cursor: "pointer",
-            fontWeight: "bold",
-            transition: "0.3s",
-          }}
-        >
-          🔙 Go Back Home
-        </button>
-      </Link>
-    </div>
+      <h1 className="text-4xl font-bold text-center text-gold mb-10">
+        Explore Our Diamond Jewellery 💍
+      </h1>
+      <ProductList />
+    </motion.div>
   );
 }

@@ -1,15 +1,41 @@
-// ✅ File: src/app/not-found.tsx
+"use client";
+
+import Link from "next/link";
+
 export default function NotFound() {
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-[#faf8f6] text-center">
-      <h1 className="text-5xl font-bold text-gold">404</h1>
-      <p className="text-gray-600 mt-4">Oops! Page not found.</p>
-      <a
-        href="/"
-        className="mt-6 inline-block bg-gold text-white px-6 py-3 rounded-full hover:bg-amber-500"
-      >
-        Back to Home
-      </a>
+    <div
+      style={{
+        textAlign: "center",
+        padding: "100px 20px",
+        color: "white",
+        background: "linear-gradient(180deg, #000, #111)",
+        minHeight: "100vh",
+      }}
+    >
+      <h1 style={{ fontSize: "3rem", marginBottom: "20px" }}>404 - Page Not Found</h1>
+      <p style={{ fontSize: "1.2rem", opacity: 0.8 }}>
+        The page you’re looking for doesn’t exist.
+      </p>
+
+      {/* ✅ Correct navigation using Link (no <a> tag now) */}
+      <Link href="/" passHref legacyBehavior>
+        <button
+          style={{
+            marginTop: "30px",
+            background: "#40e0d0",
+            color: "#000",
+            padding: "12px 25px",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            fontWeight: "bold",
+            transition: "0.3s",
+          }}
+        >
+          🔙 Go Back Home
+        </button>
+      </Link>
     </div>
   );
 }

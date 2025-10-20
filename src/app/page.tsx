@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image"; // ✅ یہ لائن add کرو
 
 interface Product {
   id: number;
@@ -46,9 +47,11 @@ export default function HomePage() {
               transition: "0.4s",
             }}
           >
-            <img
+            <Image
               src={product.image}
               alt={product.name}
+              width={400}
+              height={300}
               style={{
                 width: "100%",
                 height: "220px",
